@@ -30,12 +30,12 @@ public class Player {
         }
     }
 
-    public void goWest() {
+    public boolean goWest() {
         if (map.currentRoom.getEastRoom() != null) {
             map.currentRoom = map.currentRoom.getWestRoom();
             System.out.println(map.currentRoom.getName() + map.currentRoom.getDescription());
         } else {
             System.out.println("No door that direction");
         }
-    }
-}
+
+return false;}}

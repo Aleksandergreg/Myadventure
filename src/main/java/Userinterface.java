@@ -18,6 +18,7 @@ public class Userinterface {
                     System.out.println("going north, attempting to enter the cave:");
                     player.goNorth();
 
+
                 }
                 case "south", "s", "go south" -> {
                     System.out.println("Going south, attempting to enter the cave:");
@@ -34,7 +35,7 @@ public class Userinterface {
                     player.goWest();
                 }
                 case "look", "l", "looking around" ->
-                        System.out.println("You are inside of " + map.currentRoom + map.currentRoom.getDescription());
+                        System.out.println("You are inside of " + adventure.getRoom());
                 case "exit" -> {
                     System.out.println(Farve.ANSI_BLUE + "Home of the free" + Farve.ANSI_WHITE + " -because of the brave" + Farve.ANSI_RED + "- Thank you for playing");
                     System.exit(0);
