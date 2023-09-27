@@ -24,6 +24,7 @@ public class Player {
     public void goEast() {
         if (map.currentRoom.getEastRoom() != null) {
             map.currentRoom = map.currentRoom.getEastRoom();
+            System.out.println(map.currentRoom.getName() + map.currentRoom.getDescription());
         } else {
             System.out.println("No door that direction");
         }
@@ -32,6 +33,7 @@ public class Player {
     public void goWest() {
         if (map.currentRoom.getEastRoom() != null) {
             map.currentRoom = map.currentRoom.getWestRoom();
+            System.out.println(map.currentRoom.getName() + map.currentRoom.getDescription());
         } else {
             System.out.println("No door that direction");
         }

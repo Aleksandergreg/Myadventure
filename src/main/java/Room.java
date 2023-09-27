@@ -1,6 +1,6 @@
 public class Room {
-    private String name;
-    private String description;
+    private final String name;
+    private final String description;
     private Room northRoom;
     private Room southRoom;
     private Room eastRoom;

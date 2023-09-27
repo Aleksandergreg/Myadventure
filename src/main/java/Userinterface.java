@@ -18,7 +18,7 @@ public class Userinterface {
                     System.out.println("going north");
                     player.goNorth();
                     //System.out.println("You are inside of:" + map.currentRoom.getName() + map.currentRoom.getDescription());
-                    System.out.printf(Farve.ANSI_PURPLE + "You are inside of %s" +Farve.ANSI_RED + "%s\n", map.currentRoom.getName(), map.currentRoom.getDescription());
+                   // System.out.printf(Farve.ANSI_PURPLE + "You are inside of %s" +Farve.ANSI_RED + "%s\n", map.currentRoom.getName(), map.currentRoom.getDescription());
                 }
                 case "south", "s", "go south" -> {
                     player.goSouth();
@@ -27,12 +27,12 @@ public class Userinterface {
                 case "east", "e", "go east" -> {
                     System.out.println("Going east");
                     player.goEast();
-                    System.out.println("You are inside of: " + map.currentRoom.getName() + map.currentRoom.getDescription());
+                    //System.out.println("You are inside of: " + map.currentRoom.getName() + map.currentRoom.getDescription());
                 }
                 case "west", "w", "go west" -> {
                     System.out.println("Going west");
                     player.goWest();
-                    System.out.printf(Farve.ANSI_PURPLE+"You are inside of %s" + Farve.ANSI_RED + "%s\n", map.currentRoom.getName(), map.currentRoom.getDescription());
+                    //System.out.printf(Farve.ANSI_PURPLE+"You are inside of %s" + Farve.ANSI_RED + "%s\n", map.currentRoom.getName(), map.currentRoom.getDescription());
                 }
                 case "look", "l", "looking around" ->
                         System.out.println("You are inside of " + map.currentRoom + map.currentRoom.getDescription());
