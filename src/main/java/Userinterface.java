@@ -22,7 +22,7 @@ public class Userinterface {
                 }
                 case "south", "s", "go south" -> {
                     player.goSouth();
-                    System.out.println(Farve.ANSI_GREEN + "You are inside of: "+map.currentRoom.getName()+ Farve.ANSI_RED + map.currentRoom.getDescription() + Farve.ANSI_RESET);
+                   // System.out.println(Farve.ANSI_GREEN + "You are inside of: "+map.currentRoom.getName()+ Farve.ANSI_RED + map.currentRoom.getDescription() + Farve.ANSI_RESET);
                 }
                 case "east", "e", "go east" -> {
                     System.out.println("Going east");
