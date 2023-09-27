@@ -15,21 +15,22 @@ public class Userinterface {
             userInput = input.nextLine().toLowerCase().trim();
             switch (userInput) {
                 case "north", "n", "go north" -> {
-                    System.out.println("going north");
+                    System.out.println("going north, attempting to enter the cave:");
                     player.goNorth();
 
                 }
                 case "south", "s", "go south" -> {
+                    System.out.println("Going south, attempting to enter the cave:");
                     player.goSouth();
 
                 }
                 case "east", "e", "go east" -> {
-                    System.out.println("Going east, entering the cave:");
+                    System.out.println("Going east, attempting to enter the cave:");
                     player.goEast();
 
                 }
                 case "west", "w", "go west" -> {
-                    System.out.println("Going west");
+                    System.out.println("Going west, attempting to enter the cave:");
                     player.goWest();
                 }
                 case "look", "l", "looking around" ->

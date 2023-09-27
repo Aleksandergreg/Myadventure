@@ -1,7 +1,7 @@
 public class Map {
     public Room currentRoom;
 
-    public void Map(){
+    public Map(){
 
         Room room1 = new Room("Room 1 ", "The brown bear is lurking");
         Room room2 = new Room("Room 2 ", "The grizzly bear is lurking");
