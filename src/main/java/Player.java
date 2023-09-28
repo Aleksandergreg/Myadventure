@@ -22,9 +22,9 @@ public Item removeItem(String itemName) {
             return item;
         }
     }
-
-return null;
+    return null;
 }
+
     public void goNorth() {
         if (map.currentRoom.getNorthRoom() != null) {
             map.currentRoom = map.currentRoom.getNorthRoom();
