@@ -30,12 +30,12 @@ public Item removeItem(String itemName) {
     public Item takeItem(String itemName) {
         for (Item item : currentRoom.getItemsInRoom()) {
             if (item.getItemName().equals(itemName)) {
-                currentRoom.getItemsInRoom().remove(item); // Remove the item from the room
-                itemsInPlayer.add(item); // Add it to the player's items
-                return item; // Return the item that was taken
+                currentRoom.getItemsInRoom().remove(item);
+                itemsInPlayer.add(item);
+                return item; //
             }
         }
-        return null; // Return null if the item was not found in the room
+        return null;
     }
 
     public void goNorth() {
