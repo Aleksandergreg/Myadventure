@@ -2,6 +2,8 @@ public class Adventure {
     Map map = new Map();
     private Player player;
 
+
+
     public Player getPlayer(){
         return player;
     }

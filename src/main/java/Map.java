@@ -1,6 +1,7 @@
 public class Map {
     public Room currentRoom;
 
+
     public Map(){
 
         Room room1 = new Room("Room 1 ", "The brown bear is lurking");
@@ -49,6 +50,7 @@ public class Map {
     public Room getCurrent() {
         return currentRoom;
     }
+
 
 
     }

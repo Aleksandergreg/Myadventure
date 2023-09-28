@@ -1,5 +1,12 @@
 public class Player {
     Map map = new Map();
+    private Room currentRoom;
+
+
+    /*public Room getCurrentRoom(){
+        return map.currentRoom;
+    }*/
+
 
     public void goNorth() {
         if (map.currentRoom.getNorthRoom() != null) {
