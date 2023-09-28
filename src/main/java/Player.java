@@ -4,13 +4,16 @@ public class Player {
     Map map = new Map();
     private Room currentRoom;
     private ArrayList<Item> itemsInPlayer = new ArrayList<>();
-    Adventure adventure = new Adventure();
+    private Adventure adventure;
 
+    public Player(Room startingRoom) {
+        this.currentRoom = startingRoom;
+    }
 
-
-    /*public Room getCurrentRoom(){
+    public Room getCurrentRoom(){
         return map.currentRoom;
-    }*/
+    }
+
 
 public ArrayList<Item> getItemsInPlayer(){
     return itemsInPlayer;
@@ -24,6 +27,16 @@ public Item removeItem(String itemName) {
     }
     return null;
 }
+    public Item takeItem(String itemName) {
+        for (Item item : currentRoom.getItemsInRoom()) {
+            if (item.getItemName().equals(itemName)) {
+                currentRoom.getItemsInRoom().remove(item); // Remove the item from the room
+                itemsInPlayer.add(item); // Add it to the player's items
+                return item; // Return the item that was taken
+            }
+        }
+        return null; // Return null if the item was not found in the room
+    }
 
     public void goNorth() {
         if (map.currentRoom.getNorthRoom() != null) {

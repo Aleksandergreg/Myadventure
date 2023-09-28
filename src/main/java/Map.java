@@ -60,6 +60,10 @@ public class Map {
         room9.setNorthRoom(room6);
         room9.setWestRoom(room8);
         room9.setEastRoom(room2);
+
+    }
+    public void initializeItems(){
+
     }
 
     public Room getCurrent() {

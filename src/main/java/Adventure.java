@@ -1,10 +1,6 @@
 public class Adventure {
-    Map map = new Map();
+    private Map map;
     private Player player;
-
-    public Player getPlayer(){
-        return player;
-    }
 
     public Room getCurrent(){
         return map.getCurrent();

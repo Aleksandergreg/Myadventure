@@ -8,6 +8,12 @@ public class Room {
     private Room eastRoom;
     private Room westRoom;
     private ArrayList <Item> itemsInRoom = new ArrayList<>();
+    private Room startingRoom;
+
+
+    public Room getStartingRoom(){
+        return startingRoom;
+    }
 
     public ArrayList<Item> getItemsInRoom(){
         return itemsInRoom;
@@ -29,6 +35,7 @@ public class Room {
     public Room(String name, String description) {
         this.name = name;
         this.description = description;
+        this.startingRoom = getStartingRoom();
     }
 
     //get methods

@@ -4,7 +4,12 @@ public class Userinterface {
     private Scanner input = new Scanner(System.in);
     public Adventure adventure = new Adventure();
     Map map = new Map();
-    Player player = new Player();
+    Player player;
+
+    public Userinterface(){
+        Room startingRoom = map.currentRoom;
+        player = new Player(startingRoom);
+    }
 
     public void start() {
         System.out.println("Welcome to the adventure game");
@@ -17,6 +22,7 @@ public class Userinterface {
                 case "north", "n", "go north" -> {
                     System.out.println("going north, attempting to enter the cave:");
                     player.goNorth();
+
 
 
                 }
@@ -50,6 +56,15 @@ public class Userinterface {
                 case "abrakadabra", "teleport" -> {
                     System.out.println("You are inside of:" +map.currentRoom.getName());
 
+                }
+                case "take", "pick up" ->{
+                    Item itemPicked = player.takeItem(userInput);
+                    if (itemPicked == null){
+                        System.out.println("There is no item in this room");
+                    }else {
+                        System.out.println(itemPicked.getItemName() + itemPicked.getItemDescription());
+
+                    }
                 }
                 default -> System.out.println("Invalid input, please try again");
             }
