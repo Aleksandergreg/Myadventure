@@ -7,10 +7,22 @@ public class Room {
     private Room southRoom;
     private Room eastRoom;
     private Room westRoom;
-    private final ArrayList <Item> itemsInRoom = new ArrayList<>();
+    private ArrayList <Item> itemsInRoom = new ArrayList<>();
 
     public ArrayList<Item> getItemsInRoom(){
-return  getItemsInRoom();
+        return itemsInRoom;
+    }
+    public void addItem(String itemName, String itemDescription){
+        itemsInRoom.add(0,(new Item("Sværd", "Meget flot")));
+
+
+    }
+    public void setItemsInRoom(ArrayList<Item>itemList){
+        this.itemsInRoom = itemList;
+    }
+    public void createItem(String itemName, String itemDescription){
+        Item item = new Item(itemName, itemDescription);
+        itemsInRoom.add(item);
     }
 
 
@@ -60,4 +72,5 @@ return  getItemsInRoom();
     public void setWestRoom(Room westRoom) {
         this.westRoom = westRoom;
     }
-}
+    }
+

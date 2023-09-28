@@ -33,6 +33,7 @@ public class Userinterface {
                 case "west", "w", "go west" -> {
                     System.out.println("Going west, attempting to enter the cave:");
                     player.goWest();
+
                 }
                 case "look", "l", "looking around" ->
                         System.out.println("You are inside of " + adventure.getRoom());
