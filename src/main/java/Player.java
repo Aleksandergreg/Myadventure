@@ -27,13 +27,13 @@ public Item removeItem(String itemName) {
     }
     return null;
 }
-    public Item takeItem(String itemName) {
-        for (Item item : currentRoom.getItemsInRoom()) {
-            if (item.getItemName().equals(itemName)) {
-                currentRoom.getItemsInRoom().remove(item);
-                itemsInPlayer.add(item);
-                return item; //
-            }
+    public Item takeItem() {
+        ArrayList<Item> itemsInRoom = currentRoom.getItemsInRoom();
+        if (!itemsInRoom.isEmpty()) {
+            Item itemToTake = itemsInRoom.get(0);
+            itemsInPlayer.add(itemToTake);
+            itemsInRoom.remove(0);
+            return itemToTake;
         }
         return null;
     }

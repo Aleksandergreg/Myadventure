@@ -57,13 +57,12 @@ public class Userinterface {
                     System.out.println("You are inside of:" +map.currentRoom.getName());
 
                 }
-                case "take", "pick up" ->{
-                    Item itemPicked = player.takeItem(userInput);
-                    if (itemPicked == null){
-                        System.out.println("There is no item in this room");
-                    }else {
-                        System.out.println(itemPicked.getItemName() + itemPicked.getItemDescription());
-
+                case "take", "pick up" -> {
+                    Item itemTaken = player.takeItem();
+                    if (itemTaken != null) {
+                        System.out.println("You have taken the " + itemTaken.getItemName() + " from the room.");
+                    } else {
+                        System.out.println("There are no items in this room to take.");
                     }
                 }
                 default -> System.out.println("Invalid input, please try again");
