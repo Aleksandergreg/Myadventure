@@ -67,6 +67,7 @@ public class Userinterface {
                 }
                 default -> System.out.println("Invalid input, please try again");
             }
+
         }
     }
 }
