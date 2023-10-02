@@ -29,4 +29,7 @@ public class Adventure {
     public Item dropItem(String itemName) {
         return player.dropItem(itemName);
     }
+    public int showHealth(){
+        return player.getPlayerHp();
+    }
 }

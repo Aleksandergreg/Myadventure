@@ -98,6 +98,9 @@ public class UserInterface {
                         System.out.println("You dropped" + itemDropped);
                     }
                 }
+                case "health" -> {
+                    System.out.println("Your current health is: " + adventure.showHealth());
+                }
                 case "exit" -> {
                     System.out.println("Shutting down");
                     System.exit(0);

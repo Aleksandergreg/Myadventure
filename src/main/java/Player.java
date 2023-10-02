@@ -13,7 +13,9 @@ public Player(){
     public void setCurrentRoom(Room currentRoom) {
         this.currentRoom = currentRoom;
     }
-
+public int getPlayerHp(){
+        return playerHP;
+}
     public boolean move(String direction) {
         Room requestedRoom = null;
         if (direction.charAt(0) == 'n') {
