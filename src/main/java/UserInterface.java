@@ -99,7 +99,12 @@ public class UserInterface {
                     }
                 }
                 case "health" -> {
-                    System.out.println("Your current health is: " + adventure.showHealth());
+                    if (adventure.showHealth() > 100){
+                    System.out.println("Your current health is: " + adventure.showHealth() + ". You are in good condition, continue on traveler");
+                } else if (adventure.showHealth() < 100) {
+                        System.out.println("Your current health is: " + adventure.showHealth() + ". You are not in a good condition, get something to eat traveler!");
+
+                    }
                 }
                 case "exit" -> {
                     System.out.println("Shutting down");
