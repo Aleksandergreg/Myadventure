@@ -1,12 +1,15 @@
 import java.util.ArrayList;
 
 public class Player {
+    private int playerHP;
     private Room currentRoom;
     private ArrayList<Item> playerInventory = new ArrayList<>();
     Room getCurrentRoom() {
         return currentRoom;
     }
-
+public Player(){
+        playerHP = 150;
+}
     public void setCurrentRoom(Room currentRoom) {
         this.currentRoom = currentRoom;
     }
