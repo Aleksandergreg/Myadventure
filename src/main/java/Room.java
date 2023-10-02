@@ -1,83 +1,81 @@
 import java.util.ArrayList;
 
 public class Room {
-    private final String name;
-    private final String description;
-    private Room northRoom;
-    private Room southRoom;
-    private Room eastRoom;
-    private Room westRoom;
-    private ArrayList <Item> itemsInRoom = new ArrayList<>();
-    private Room startingRoom;
+    private ArrayList<Item> itemsInRoom = new ArrayList<>();
 
-
-    public Room getStartingRoom(){
-        return startingRoom;
-    }
-
-    public ArrayList<Item> getItemsInRoom(){
-        return itemsInRoom;
-    }
-    public void addItem(String itemName, String itemDescription){
-        itemsInRoom.add(0,(new Item("Sværd", "Meget flot")));
-
-
-    }
-    public void setItemsInRoom(ArrayList<Item>itemList){
-        this.itemsInRoom = itemList;
-    }
-    public void createItem(String itemName, String itemDescription){
-        Item item = new Item(itemName, itemDescription);
-        itemsInRoom.add(item);
-    }
-
+    private String name;
+    private String description;
+    private Room north;
+    private Room south;
+    private Room east;
+    private Room west;
 
     public Room(String name, String description) {
         this.name = name;
         this.description = description;
-        this.startingRoom = getStartingRoom();
     }
 
-    //get methods
     public String getName() {
         return name;
-
     }
 
     public String getDescription() {
         return description;
     }
 
-    public Room getNorthRoom() {
-        return northRoom;
+    public void setNorth(Room room) {
+        this.north = room;
     }
 
-    public Room getSouthRoom() {
-        return southRoom;
+    public void setSouth(Room room) {
+        this.south = room;
     }
 
-    public Room getEastRoom() {
-        return eastRoom;
+    public void setEast(Room room) {
+        this.east = room;
     }
 
-    public Room getWestRoom() {
-        return westRoom;
+    public void setWest(Room room) {
+        this.west = room;
     }
 
-    public void setSouthRoom(Room southRoom) {
-        this.southRoom = southRoom;
+    public Room getNorth() {
+        return north;
     }
 
-    public void setNorthRoom(Room northRoom) {
-        this.northRoom = northRoom;
+    public Room getSouth() {
+        return south;
     }
 
-    public void setEastRoom(Room eastRoom) {
-        this.eastRoom = eastRoom;
+    public Room getEast() {
+        return east;
     }
 
-    public void setWestRoom(Room westRoom) {
-        this.westRoom = westRoom;
-    }
+    public Room getWest() {
+        return west;
     }
 
+
+    public void createItem(String itemName, String itemDescription) {
+        Item item = new Item(itemName, itemDescription);
+        itemsInRoom.add(item);
+    }
+
+    public ArrayList<Item> getItemsInRoom(){
+        return itemsInRoom;
+    }
+
+    public void addItem(Item item){
+        itemsInRoom.add(item);
+    }
+
+    public Item removeItem(String itemName){
+        for (Item item : itemsInRoom){
+            if (item.getItemName().equals(itemName)){
+                itemsInRoom.remove(item);
+                return item;
+            }
+        }
+        return null;
+    }
+}

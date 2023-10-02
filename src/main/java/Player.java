@@ -1,105 +1,63 @@
 import java.util.ArrayList;
 
 public class Player {
-    Map map = new Map();
     private Room currentRoom;
-    private ArrayList<Item> itemsInPlayer = new ArrayList<>();
-    private Adventure adventure;
-
-    public Player(Room startingRoom) {
-        this.currentRoom = startingRoom;
+    private ArrayList<Item> playerInventory = new ArrayList<>();
+    Room getCurrentRoom() {
+        return currentRoom;
     }
 
-    public Room getCurrentRoom(){
-        return map.currentRoom;
+    public void setCurrentRoom(Room currentRoom) {
+        this.currentRoom = currentRoom;
     }
 
+    public boolean move(String direction) {
+        Room requestedRoom = null;
+        if (direction.charAt(0) == 'n') {
+            requestedRoom = currentRoom.getNorth();
+        } else if (direction.charAt(0) == 'e') {
+            requestedRoom = currentRoom.getEast();
+        } else if (direction.charAt(0) == 'w') {
+            requestedRoom = currentRoom.getWest();
+        } else if (direction.charAt(0) == 's') {
+            requestedRoom = currentRoom.getSouth();
+        }
 
-public ArrayList<Item> getItemsInPlayer(){
-    return itemsInPlayer;
-}
-public Item removeItem(String itemName) {
-    for (Item item : itemsInPlayer) {
-        if (item.getItemName().equals(itemName)) {
-            itemsInPlayer.remove(item);
-            return item;
+        if (requestedRoom != null) {
+            currentRoom = requestedRoom;
+            return true;
+        } else {
+            return false;
         }
     }
-    return null;
-}
-    public Item takeItem() {
-        ArrayList<Item> itemsInRoom = currentRoom.getItemsInRoom();
-        if (!itemsInRoom.isEmpty()) {
-            Item itemToTake = itemsInRoom.get(0);
-            itemsInPlayer.add(itemToTake);
-            itemsInRoom.remove(0);
-            return itemToTake;
+
+    public ArrayList<Item> getPlayerInventory() {
+        return playerInventory;
+    }
+
+    public void addItem(Item item){
+        playerInventory.add(item);
+    }
+
+    public Item removeItem(String itemName){
+        for (Item item : playerInventory){
+            if (item.getItemName().equals(itemName)){
+                playerInventory.remove(item);
+                return item;
+            }
         }
         return null;
     }
 
-    public void goNorth() {
-        if (map.currentRoom.getNorthRoom() != null) {
-            map.currentRoom = map.currentRoom.getNorthRoom();
-            System.out.println(map.currentRoom.getName() + map.currentRoom.getDescription());
-            ArrayList<Item> itemsInRoom = map.currentRoom.getItemsInRoom();
-            if (!itemsInRoom.isEmpty()) {
-                System.out.println("Items in the room:");
-                for (Item item : itemsInRoom) {
-                    System.out.println(item.getItemName() + ": " + item.getItemDescription());
-                }
-            }
-        } else {
-            System.out.println("No door that direction");
-        }
-
+    public Item takeItem(String itemName) {
+        Item pickedUpItem = getCurrentRoom().removeItem(itemName);
+        addItem(pickedUpItem);
+        return pickedUpItem;
     }
 
-    public void goSouth() {
-        if (map.currentRoom.getSouthRoom() != null) {
-            map.currentRoom = map.currentRoom.getSouthRoom();
-            System.out.println(map.currentRoom.getName() + map.currentRoom.getDescription());
-            ArrayList<Item> itemsInRoom = map.currentRoom.getItemsInRoom();
-            if (!itemsInRoom.isEmpty()) {
-                System.out.println("Items in the room:");
-                for (Item item : itemsInRoom) {
-                    System.out.println(item.getItemName() + ": " + item.getItemDescription());
-                }
-            }
-        } else {
-            System.out.println("No door that direction");
-        }
+    public Item dropItem(String itemName) {
+        Item droppedItem = removeItem(itemName);
+        currentRoom.addItem(droppedItem);
+        return droppedItem;
     }
-
-    public void goEast() {
-        if (map.currentRoom.getEastRoom() != null) {
-            map.currentRoom = map.currentRoom.getEastRoom();
-            System.out.println(map.currentRoom.getName() + map.currentRoom.getDescription());
-            ArrayList<Item> itemsInRoom = map.currentRoom.getItemsInRoom();
-            if (!itemsInRoom.isEmpty()) {
-                System.out.println("Items in the room:");
-                for (Item item : itemsInRoom) {
-                    System.out.println(item.getItemName() + ": " + item.getItemDescription());
-                }
-            }
-        } else {
-            System.out.println("No door that direction");
-        }
-    }
-
-    public void goWest() {
-        if (map.currentRoom.getEastRoom() != null) {
-            map.currentRoom = map.currentRoom.getWestRoom();
-            System.out.println(map.currentRoom.getName() + map.currentRoom.getDescription());
-            ArrayList<Item> itemsInRoom = map.currentRoom.getItemsInRoom();
-            if (!itemsInRoom.isEmpty()) {
-                System.out.println("Items in the room:");
-                for (Item item : itemsInRoom) {
-                    System.out.println(item.getItemName() + ": " + item.getItemDescription());
-                }
-            }
-        } else {
-            System.out.println("No door that direction");
-        }
-
-}}
+}
