@@ -90,6 +90,13 @@ public class UserInterface {
                         System.out.println("You pick up: " +  itemPickedUp);
                     }
                 }
+                case "eat" -> {
+                    Adventure.message outcome = adventure.eatFood(userInput);
+                    switch (outcome){
+                        case NOT_FOUND ->
+                    System.out.println("Eating " + userInput + "your healthpoints are now: " + adventure.showHealth());
+
+                }}
                 case "drop" -> {
                     Item itemDropped = adventure.dropItem(commands);
                     if (itemDropped == null){

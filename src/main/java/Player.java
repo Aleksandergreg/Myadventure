@@ -80,7 +80,7 @@ return null;
            removeItem(itemName);
            return Adventure.message.FOUND;
        } else if (item == null) {
-return Adventure.message.FOUND;
+return Adventure.message.NOT_FOUND;
        }
 else{
     return Adventure.message.CANT;
