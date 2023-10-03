@@ -32,4 +32,10 @@ public class Adventure {
     public int showHealth(){
         return player.getPlayerHp();
     }
+    public enum message{
+        NOT_FOUND,
+        FOUND,
+        CANT;
+
+    }
 }

@@ -65,4 +65,26 @@ public int getPlayerHp(){
         currentRoom.addItem(droppedItem);
         return droppedItem;
     }
-}
+public Item findItem(String itemName){
+        for (Item item: playerInventory){
+            if (item.getItemName().equals(itemName)){
+                return item;
+            }
+        }
+return null;
+    }
+    public Adventure.message eatFood(String itemName){
+        Item item = findItem(itemName);
+       if (item instanceof Food food){
+           playerHP += food.getHealthPoints();
+           removeItem(itemName);
+           return Adventure.message.FOUND;
+       } else if (item == null) {
+return Adventure.message.FOUND;
+       }
+else{
+    return Adventure.message.CANT;
+       }
+       }
+    }
+
