@@ -38,4 +38,7 @@ public class Adventure {
         CANT;
 
     }
+    public Adventure.message eatFood(String itemname){
+        return player.eatFood(itemname);
+    }
 }
