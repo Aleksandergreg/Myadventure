@@ -64,6 +64,14 @@ public class Room {
         Food food = new Food(itemName, itemDescription, healthPoints);
         itemsInRoom.add(food);
     }
+    public void createMeleeWeapon(String itemName, String itemDescription, int weaponDamage){
+        Weapon weapon = new Weapon(itemName, itemDescription, weaponDamage);
+        itemsInRoom.add(weapon);
+    }
+    public void createRangedWeapon(String itemName, String itemDescription, int weaponDamage){
+        Weapon rangedWeapon = new Weapon(itemName, itemDescription, weaponDamage);
+        itemsInRoom.add(rangedWeapon);
+    }
 
     public ArrayList<Item> getItemsInRoom(){
         return itemsInRoom;

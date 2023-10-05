@@ -49,6 +49,7 @@ public class Player {
         playerInventory.add(item);
     }
 
+
     public Item removeItem(String itemName) {
         for (Item item : playerInventory) {
             if (item.getItemName().equals(itemName)) {
@@ -92,5 +93,12 @@ public class Player {
             return Adventure.message.NOT_FOUND;
         }
     }
-}
+    public Adventure.message equip(String itemName){
+        Item item = findItem(itemName);
+        if (item instanceof Weapon weapon);{
+        removeItem(itemName);
+        return Adventure.message.FOUND;
+
+    }
+}}
 
