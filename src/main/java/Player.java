@@ -4,18 +4,23 @@ public class Player {
     private int playerHP;
     private Room currentRoom;
     private ArrayList<Item> playerInventory = new ArrayList<>();
+
     Room getCurrentRoom() {
         return currentRoom;
     }
-public Player(){
+
+    public Player() {
         playerHP = 150;
-}
+    }
+
     public void setCurrentRoom(Room currentRoom) {
         this.currentRoom = currentRoom;
     }
-public int getPlayerHp(){
+
+    public int getPlayerHp() {
         return playerHP;
-}
+    }
+
     public boolean move(String direction) {
         Room requestedRoom = null;
         if (direction.charAt(0) == 'n') {
@@ -40,13 +45,13 @@ public int getPlayerHp(){
         return playerInventory;
     }
 
-    public void addItem(Item item){
+    public void addItem(Item item) {
         playerInventory.add(item);
     }
 
-    public Item removeItem(String itemName){
-        for (Item item : playerInventory){
-            if (item.getItemName().equals(itemName)){
+    public Item removeItem(String itemName) {
+        for (Item item : playerInventory) {
+            if (item.getItemName().equals(itemName)) {
                 playerInventory.remove(item);
                 return item;
             }
@@ -65,26 +70,27 @@ public int getPlayerHp(){
         currentRoom.addItem(droppedItem);
         return droppedItem;
     }
-public Item findItem(String itemName){
-        for (Item item: playerInventory){
-            if (item.getItemName().equals(itemName)){
+
+    public Item findItem(String itemName) {
+        for (Item item : playerInventory) {
+            if (item.getItemName().equals(itemName)) {
                 return item;
             }
         }
-return null;
+        return null;
     }
-    public Adventure.message eatFood(String itemName){
+
+    public Adventure.message eatFood(String itemName) {
         Item item = findItem(itemName);
-       if (item instanceof Food food){
-           playerHP += food.getHealthPoints();
-           removeItem(itemName);
-           return Adventure.message.FOUND;
-       } else if (item == null) {
-return Adventure.message.CANT;
-       }
-else{
-    return Adventure.message.NOT_FOUND;
-       }
-       }
+        if (item instanceof Food food) {
+            playerHP += food.getHealthPoints();
+            removeItem(itemName);
+            return Adventure.message.FOUND;
+        } else if (item == null) {
+            return Adventure.message.CANT;
+        } else {
+            return Adventure.message.NOT_FOUND;
+        }
     }
+}
 
