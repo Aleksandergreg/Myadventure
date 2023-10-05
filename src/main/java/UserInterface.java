@@ -71,9 +71,9 @@ public class UserInterface {
                         System.out.println("There are no items in this room.");
                     }
                 }
-                case "help", "h" -> {
+                case "help", "h" ->
                     helpMenu();
-                }
+
                 case "inventory", "inv" -> {
                     if (adventure.getPlayer().getPlayerInventory().isEmpty()) {
                         System.out.println("Your inventory is empty.");
