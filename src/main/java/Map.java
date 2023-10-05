@@ -42,6 +42,7 @@ public class Map {
         room8.setWest(room7);
         room8.setNorth(room5);
         room8.setEast(room9);
+        room8.createFood("Ost", "Meget stærk", 100);
 
         room9.setWest(room8);
         room9.setNorth(room6);

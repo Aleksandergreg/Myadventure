@@ -60,6 +60,10 @@ public class Room {
         Item item = new Item(itemName, itemDescription);
         itemsInRoom.add(item);
     }
+    public void createFood (String itemName,String itemDescription, int healthPoints){
+        Food food = new Food(itemName, itemDescription, healthPoints);
+        itemsInRoom.add(food);
+    }
 
     public ArrayList<Item> getItemsInRoom(){
         return itemsInRoom;
