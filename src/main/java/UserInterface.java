@@ -95,8 +95,8 @@ public class UserInterface {
                     switch (outcome){
                         case FOUND ->
                     System.out.println("Eating " + userInput + " your healthpoints are now: " + adventure.showHealth());
-                        case CANT -> System.out.println("You can't eat that" + userInput);
-                        case NOT_FOUND -> System.out.println("There is no food in the room" + userInput);
+                        case CANT -> System.out.println("You can't eat that " + userInput);
+                        case NOT_FOUND -> System.out.println("There is no food in the room " + userInput);
 
                 }}
                 case "drop" -> {
