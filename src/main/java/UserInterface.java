@@ -25,36 +25,36 @@ public class UserInterface {
             String[] inputSplit = userInput.split(" ");
             String command = inputSplit[0];
 
-            if (inputSplit.length > 1){
+            if (inputSplit.length > 1) {
                 commands = inputSplit[1];
             }
 
             switch (command) {
-                case "go north","north", "n" -> {
-                    if (adventure.go("north")){
+                case "go north", "north", "n" -> {
+                    if (adventure.go("north")) {
                         System.out.println("Going north\n" + adventure.getDescription());
-                    }else{
+                    } else {
                         System.out.println("No entrance that direction");
                     }
                 }
-                case "go south","south", "s" -> {
-                    if (adventure.go("south")){
+                case "go south", "south", "s" -> {
+                    if (adventure.go("south")) {
                         System.out.println("Going south\n" + adventure.getDescription());
-                    }else{
+                    } else {
                         System.out.println("No entrance that direction");
                     }
                 }
-                case "go east","east","e" -> {
-                    if (adventure.go("east")){
+                case "go east", "east", "e" -> {
+                    if (adventure.go("east")) {
                         System.out.println("Going east\n" + adventure.getDescription());
-                    }else{
+                    } else {
                         System.out.println("No entrance that direction");
                     }
                 }
-                case "go west","west","w" -> {
-                    if (adventure.go("west")){
+                case "go west", "west", "w" -> {
+                    if (adventure.go("west")) {
                         System.out.println("Going west\n" + adventure.getDescription());
-                    }else{
+                    } else {
                         System.out.println("No entrance that direction");
                     }
                 }
@@ -67,8 +67,7 @@ public class UserInterface {
                         System.out.println("There are also some items in here: " + adventure.getCurrentRoom().getItemsInRoom());
                     } else if (adventure.getCurrentRoom().getItemsInRoom().size() == 1) {
                         System.out.println("There is also an item in here: " + adventure.getCurrentRoom().getItemsInRoom());
-                    }
-                    else {
+                    } else {
                         System.out.println("There are no items in this room.");
                     }
                 }
@@ -76,41 +75,42 @@ public class UserInterface {
                     helpMenu();
                 }
                 case "inventory", "inv" -> {
-                    if (adventure.getPlayer().getPlayerInventory().isEmpty()){
+                    if (adventure.getPlayer().getPlayerInventory().isEmpty()) {
                         System.out.println("Your inventory is empty.");
-                    }else{
+                    } else {
                         System.out.println("Your inventory contains: " + adventure.getPlayer().getPlayerInventory());
                     }
                 }
                 case "take" -> {
                     Item itemPickedUp = adventure.takeItem(commands);
-                    if (itemPickedUp == null){
+                    if (itemPickedUp == null) {
                         System.out.println("There is no item in the room of that name.");
                     } else {
-                        System.out.println("You pick up: " +  itemPickedUp);
+                        System.out.println("You pick up: " + itemPickedUp);
                     }
                 }
                 case "eat" -> {
                     Adventure.message outcome = adventure.eatFood(userInput);
-                    switch (outcome){
+                    switch (outcome) {
                         case FOUND ->
-                    System.out.println("Eating " + userInput + " your healthpoints are now: " + adventure.showHealth());
+                                System.out.println("Eating " + userInput + " your healthpoints are now: " + adventure.showHealth());
                         case CANT -> System.out.println("You can't eat that " + userInput);
                         case NOT_FOUND -> System.out.println("There is no food in the room " + userInput);
 
-                }}
+                    }
+                }
                 case "drop" -> {
                     Item itemDropped = adventure.dropItem(commands);
-                    if (itemDropped == null){
+                    if (itemDropped == null) {
                         System.out.println("You have no item of that name.");
                     } else {
                         System.out.println("You dropped " + itemDropped);
                     }
                 }
                 case "health" -> {
-                    if (adventure.showHealth() > 100){
-                    System.out.println("Your current health is: " + adventure.showHealth() + ". You are in good condition, continue on traveler");
-                } else if (adventure.showHealth() < 100) {
+                    if (adventure.showHealth() > 100) {
+                        System.out.println("Your current health is: " + adventure.showHealth() + ". You are in good condition, continue on traveler");
+                    } else if (adventure.showHealth() < 100) {
                         System.out.println("Your current health is: " + adventure.showHealth() + ". You are not in a good condition, get something to eat traveler!");
 
                     }
