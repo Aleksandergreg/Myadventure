@@ -38,7 +38,7 @@ public class Adventure {
         CANT;
 
     }
-    public Adventure.message eatFood(String itemname){
-        return player.eatFood(itemname);
+    public Adventure.message eatFood(String itemName){
+        return player.eatFood(itemName);
     }
 }

@@ -94,9 +94,9 @@ public class UserInterface {
                     Adventure.message outcome = adventure.eatFood(userInput);
                     switch (outcome){
                         case FOUND ->
-                    System.out.println("Eating " + commands + " your healthpoints are now: " + adventure.showHealth());
-                        case CANT -> System.out.println("You can't eat that");
-                        case NOT_FOUND -> System.out.println("There is no food in the room");
+                    System.out.println("Eating " + userInput + " your healthpoints are now: " + adventure.showHealth());
+                        case CANT -> System.out.println("You can't eat that" + userInput);
+                        case NOT_FOUND -> System.out.println("There is no food in the room" + userInput);
 
                 }}
                 case "drop" -> {
