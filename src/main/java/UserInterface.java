@@ -104,7 +104,7 @@ public class UserInterface {
                     if (itemDropped == null){
                         System.out.println("You have no item of that name.");
                     } else {
-                        System.out.println("You dropped" + itemDropped);
+                        System.out.println("You dropped " + itemDropped);
                     }
                 }
                 case "health" -> {
