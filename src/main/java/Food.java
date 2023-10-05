@@ -3,7 +3,7 @@ public class Food extends Item{
 
 
 
-    //make an overloaded constructor with super(itemName, itemDescription) so it inherits the variables from the Item Class
+    //make an overloaded constructor with super(itemName, itemDescription) so it inherits the variables in the constructor from the Item Class
 public Food (String itemName, String itemDescription, int healthPoints){
     super(itemName, itemDescription);
     this.healthPoints = healthPoints;
