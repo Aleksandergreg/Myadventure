@@ -125,6 +125,13 @@ public class UserInterface {
                     }
 
                 }
+                case "attack" -> {
+                    if (adventure.equipWeapon(commands) != null) {
+                        System.out.println("Attacking the enemy...");
+                    } else if (adventure.equipWeapon(commands) == null) {
+                        System.out.println("You have no weapon equipped");
+                    }
+                }
                 case "exit" -> {
                     System.out.println("Shutting down");
                     System.exit(0);
