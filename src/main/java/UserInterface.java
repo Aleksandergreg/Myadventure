@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class UserInterface {
     private Adventure adventure;
-    private final Scanner scan = new Scanner(System.in).useLocale(Locale.ENGLISH);
+    private final Scanner scan = new Scanner(System.in);
     private String userInput = "";
     private String commands = "";
 
