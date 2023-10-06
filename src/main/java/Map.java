@@ -15,6 +15,7 @@ public class Map {
         room1.setEast(room2);
         room1.setSouth(room4);
         room1.createMelee("Thors Hammer","Really strong", 10);
+        room1.createFood("Ost","Stærk",10);
 
         room2.setWest(room1);
         room2.setEast(room3);
