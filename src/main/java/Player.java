@@ -93,12 +93,19 @@ public class Player {
             return Adventure.message.NOT_FOUND;
         }
     }
-    public Adventure.message equip(String itemName){
+    public Adventure.message equipWeapon(String itemName) {
         Item item = findItem(itemName);
-        if (item instanceof Weapon weapon);{
-        removeItem(itemName);
-        return Adventure.message.FOUND;
-
+        if (item == null) {
+            return Adventure.message.NOT_FOUND;
+        } else if (item instanceof Weapon) {
+             currentRoom.= (Weapon) item;
+            return Adventure.message.FOUND;
+        } else {
+            return Adventure.message.CANT;
+        }
     }
-}}
+    public Weapon getWeapon(){
+        
+    }
+}
 
