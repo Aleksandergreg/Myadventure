@@ -1,15 +1,24 @@
 public abstract class Weapon extends Item {
-    public int weaponDamage;
+    private int weaponDamage;
 
-    public Weapon(String itemName, String itemDescription, int weaponDamage) {
-        super(itemName, itemDescription);
-        this.weaponDamage = weaponDamage;
+
+    public Weapon(String weaponName, String weaponDescription, int damage) {
+        super(weaponName, weaponDescription);
+        this.weaponDamage = damage;
     }
 
-    public abstract int remainingAmmo();
+    public String getName() {
+        return super.getItemName();
+    }
 
-    public abstract int attackEnemy();
-    public int getWeaponDamage(){
+    public int getWeaponDamage() {
         return weaponDamage;
     }
-}
+
+    public abstract int getAmmoLeft();
+
+    public abstract void setAmmo(int ammo);
+
+    public boolean hasAmmo() {
+        return true;
+    }}

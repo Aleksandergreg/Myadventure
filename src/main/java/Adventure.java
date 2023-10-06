@@ -41,4 +41,7 @@ public class Adventure {
     public Adventure.message eatFood(String itemName){
         return player.eatFood(itemName);
     }
+    public Adventure.message equipWeapon(String itemName){
+        return player.weaponEquip(itemName);
+    }
 }

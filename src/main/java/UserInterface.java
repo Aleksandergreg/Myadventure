@@ -115,6 +115,16 @@ public class UserInterface {
 
                     }
                 }
+                case "equip" -> {
+                    Adventure.message outcome = adventure.equipWeapon(userInput);
+                    switch (outcome){
+                        case FOUND -> {System.out.println("Equipping: " + userInput);
+                        System.out.println(adventure.getPlayer().getWeaponEquipped().getWeaponDamage());}
+                        case CANT -> System.out.println("Cannot equip that item: " + userInput);
+                        case NOT_FOUND -> System.out.println("Can't find an item with that name" + userInput);
+                    }
+
+                }
                 case "exit" -> {
                     System.out.println("Shutting down");
                     System.exit(0);

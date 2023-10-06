@@ -4,6 +4,7 @@ public class Player {
     private int playerHP;
     private Room currentRoom;
     private ArrayList<Item> playerInventory = new ArrayList<>();
+    private Weapon weaponEquipped;
 
     Room getCurrentRoom() {
         return currentRoom;
@@ -93,19 +94,19 @@ public class Player {
             return Adventure.message.NOT_FOUND;
         }
     }
-    public Adventure.message equipWeapon(String itemName) {
+    public Adventure.message weaponEquip(String itemName) {
         Item item = findItem(itemName);
         if (item == null) {
             return Adventure.message.NOT_FOUND;
         } else if (item instanceof Weapon) {
-             currentRoom.= (Weapon) item;
+            weaponEquipped = (Weapon) item;
             return Adventure.message.FOUND;
         } else {
             return Adventure.message.CANT;
         }
     }
-    public Weapon getWeapon(){
-        
+    public Weapon getWeaponEquipped(){
+        return weaponEquipped;
     }
 }
 

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Room {
     private ArrayList<Item> itemsInRoom = new ArrayList<>();
@@ -64,14 +65,12 @@ public class Room {
         Food food = new Food(itemName, itemDescription, healthPoints);
         itemsInRoom.add(food);
     }
-    public void createMeleeWeapon(String itemName, String itemDescription, int weaponDamage){
-        Weapon weapon = new Weapon(itemName, itemDescription, weaponDamage);
-        itemsInRoom.add(weapon);
-    }
-    public void createRangedWeapon(String itemName, String itemDescription, int weaponDamage){
-        Weapon rangedWeapon = new Weapon(itemName, itemDescription, weaponDamage);
-        itemsInRoom.add(rangedWeapon);
-    }
+   public void createMelee(String itemName, String itemDescription, int damage){
+        MeleeWeapon meleeWeapon = new MeleeWeapon(itemName, itemDescription, damage);
+   }
+   public void createRanged (String itemName, String itemDescription, int damage, int ammo){
+       RangedWeapon rangedWeapon = new RangedWeapon(itemName,itemDescription, damage, ammo);
+   }
 
     public ArrayList<Item> getItemsInRoom(){
         return itemsInRoom;

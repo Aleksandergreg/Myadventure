@@ -19,7 +19,6 @@ public class Map {
         room2.setWest(room1);
         room2.setEast(room3);
         room2.createItem("A canadian waffle", "Would be nice with some syrup to put on top though");
-        room2.createRangedWeapon("A big bow", "Maybe it was once hidden in the Oak of Yggdrasil", 1);
 
         room3.setWest(room2);
         room3.setSouth(room6);
@@ -44,11 +43,10 @@ public class Map {
         room8.setNorth(room5);
         room8.setEast(room9);
         room8.createFood("Ost", "Meget stærk", 100);
+        room8.createMelee("Thors Hammer", "Meget stærk", 10);
 
         room9.setWest(room8);
         room9.setNorth(room6);
-        room9.createMeleeWeapon("Thors Hammer", "Fucking sej", 50);
-
         currentRoom = room1;
     }
 
