@@ -14,12 +14,13 @@ public class Map {
         // Setting directions for each room
         room1.setEast(room2);
         room1.setSouth(room4);
-       room1.createMelee("sværd", "stærk",5);
+        room1.createMelee("Thors Hammer","Really strong", 10);
+        room1.createFood("Ost","Stærk",10);
 
         room2.setWest(room1);
         room2.setEast(room3);
         room2.createItem("A canadian waffle", "Would be nice with some syrup to put on top though");
-
+        room1.createEnemy("Aleksander", "Stærk", 50, 30, new MeleeWeapon("hammer", "stærk", 30));
         room3.setWest(room2);
         room3.setSouth(room6);
         room3.createItem("Big snake", "A green can with the name 'Carlsberg' on it");
@@ -34,7 +35,7 @@ public class Map {
         room6.setNorth(room3);
         room6.setSouth(room9);
         room6.createItem("book", "A heavy leather cover with pages inside.");
-        room1.createMelee("sværd", "stærk", 5);
+
         room7.setNorth(room4);
         room7.setEast(room8);
         room7.createItem("knife", "A shiny metal thing with sharper blade at the end.");

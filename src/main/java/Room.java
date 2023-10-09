@@ -3,6 +3,7 @@ import java.util.Random;
 
 public class Room {
     private ArrayList<Item> itemsInRoom = new ArrayList<>();
+    private ArrayList<Enemy> enemies = new ArrayList<>();
 
     private String name;
     private String description;
@@ -60,6 +61,13 @@ public class Room {
     public void createItem(String itemName, String itemDescription) {
         Item item = new Item(itemName, itemDescription);
         itemsInRoom.add(item);
+    }
+    public void createEnemy (String enemyName, String enemyDescription, int healthPoints, int damage, Weapon weapon){
+        Enemy enemy = new Enemy(healthPoints, enemyDescription, weapon);
+        addEnemy(enemy);
+    }
+    public void addEnemy (Enemy enemy){
+        enemy.add(enemy);
     }
     public void createFood (String itemName,String itemDescription, int healthPoints){
         Food food = new Food(itemName, itemDescription, healthPoints);
