@@ -2,6 +2,13 @@ public abstract class Weapon extends Item {
     private int weaponDamage;
 
 
+    @Override
+    public String toString() {
+        return "Weapon{" +
+                "weaponDamage=" + weaponDamage +
+                '}';
+    }
+
     public Weapon(String weaponName, String weaponDescription, int damage) {
         super(weaponName, weaponDescription);
         this.weaponDamage = damage;

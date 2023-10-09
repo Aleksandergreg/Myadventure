@@ -14,8 +14,7 @@ public class Map {
         // Setting directions for each room
         room1.setEast(room2);
         room1.setSouth(room4);
-        room1.createMelee("Thors Hammer","Really strong", 10);
-        room1.createFood("Ost","Stærk",10);
+       room1.createMelee("sværd", "stærk",5);
 
         room2.setWest(room1);
         room2.setEast(room3);
@@ -35,7 +34,7 @@ public class Map {
         room6.setNorth(room3);
         room6.setSouth(room9);
         room6.createItem("book", "A heavy leather cover with pages inside.");
-
+        room1.createMelee("sværd", "stærk", 5);
         room7.setNorth(room4);
         room7.setEast(room8);
         room7.createItem("knife", "A shiny metal thing with sharper blade at the end.");
