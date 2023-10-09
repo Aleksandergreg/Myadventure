@@ -34,7 +34,7 @@ public class Enemy {
     public boolean enemyDied() {
         if (enemyHp < 1) {
             room.addItem(enemyWeapEquip);
-            room.removeItem(" ");
+            room.removeItem(enemyWeapEquip.getItemName());
             return true;
         }else {
             return false;
