@@ -67,7 +67,7 @@ public class Room {
         addEnemy(enemy);
     }
     public void addEnemy (Enemy enemy){
-        enemy.add(enemy);
+        enemies.add(enemy);
     }
     public void createFood (String itemName,String itemDescription, int healthPoints){
         Food food = new Food(itemName, itemDescription, healthPoints);

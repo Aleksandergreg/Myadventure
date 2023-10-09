@@ -3,6 +3,7 @@ public class Enemy {
     private String enemyName;
     private Weapon enemyWeapEquip;
     private String enemyDescription;
+    private Room room;
 
 
 
@@ -23,9 +24,24 @@ public class Enemy {
     public String getEnemyDescription(){
         return enemyDescription;
     }
-
-    public void add(Enemy enemy) {
+    public int damageDealt (Player player){
+        int damageDealt = enemyHp - player.getWeaponEquipped().getWeaponDamage();
+        return damageDealt;
     }
+    public void attack(Player player){
+        player.setPlayerHP(player.getPlayerHp() - enemyWeapEquip.getWeaponDamage());
+    }
+    public boolean enemyDied() {
+        if (enemyHp < 1) {
+            room.addItem(enemyWeapEquip);
+            room.removeItem(" ");
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+
     @Override
     public String toString() {
         return "Enemy{" +

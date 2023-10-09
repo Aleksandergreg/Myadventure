@@ -108,5 +108,8 @@ public class Player {
     public Weapon getWeaponEquipped(){
         return weaponEquipped;
     }
+    public void setPlayerHP(int playerHP){
+        this.playerHP = playerHP;
+    }
 }
 
