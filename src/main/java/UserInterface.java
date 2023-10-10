@@ -67,9 +67,17 @@ public class UserInterface {
                         System.out.println("There are also some items in here: " + adventure.getCurrentRoom().getItemsInRoom());
                     } else if (adventure.getCurrentRoom().getItemsInRoom().size() == 1) {
                         System.out.println("There is also an item in here: " + adventure.getCurrentRoom().getItemsInRoom());
-                    } else {
+                    }
+                    else {
                         System.out.println("There are no items in this room.");
                     }
+                     if (!adventure.getCurrentRoom().getEnemies().isEmpty()) {
+                    for (Enemy enemy : adventure.getCurrentRoom().getEnemies()){
+                        System.out.println("There is an enemy in the room: " + enemy.getEnemyName() + enemy.getEnemyDescription());
+                    }
+                    }
+                        
+
                 }
                 case "help", "h" ->
                     helpMenu();
@@ -132,6 +140,7 @@ public class UserInterface {
                         System.out.println("You have no weapon equipped");
                     }
                 }
+                case "hp" -> health();
                 case "exit" -> {
                     System.out.println("Shutting down");
                     System.exit(0);
@@ -139,6 +148,44 @@ public class UserInterface {
                 default -> System.out.println("Error - wrong input. Type 'help' to see commands");
             }
         }
+    }
+    private void health(){
+        System.out.println("Your health " + adventure.getPlayer().getPlayerHp());
+if (adventure.getPlayer().getPlayerHp() < 35){
+    System.out.println("Your health is critically low");
+} else if (adventure.getPlayer().getPlayerHp() < 75 && adventure.getPlayer().getPlayerHp()  > 35) {
+    System.out.println("Your health is a bit low, fight with caution");
+}else {
+    System.out.println("Continue on warrior, you are in very good shape");
+}
+{
+    
+}
+    }
+private void attack(){
+Adventure.message result =adventure.attackEnemy(userInput);
+switch (result){
+    case CANT -> System.out.println("You need to equip a weapon");
+    case NOT_FOUND -> System.out.println("There is no enemy in the room");
+    case FOUND ->{
+if (!adventure.getPlayer().playerDead()){
+if (!adventure.getCurrentRoom().getEnemies().isEmpty()){
+    System.out.println("Trying to attack:" + userInput);
+    for (Enemy enemy : adventure.getCurrentRoom().getEnemies()){
+        System.out.println(enemy.getEnemyName() + "is damaged, HP is now: " + enemy.getEnemyHp());
+        if (!enemy.enemyDied()){
+            health();
+
+        }
+else {
+            System.out.println("The enemy died");
+        }
+
+    }
+}
+}
+    }
+}
     }
 
     private void helpMenu() {

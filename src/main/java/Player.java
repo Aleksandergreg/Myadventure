@@ -5,6 +5,7 @@ public class Player {
     private Room currentRoom;
     private ArrayList<Item> playerInventory = new ArrayList<>();
     private Weapon weaponEquipped;
+    private int playerDamage;
 
     Room getCurrentRoom() {
         return currentRoom;
@@ -12,6 +13,10 @@ public class Player {
 
     public Player() {
         playerHP = 150;
+    }
+
+    public int getPlayerDamage() {
+        return playerDamage;
     }
 
     public void setCurrentRoom(Room currentRoom) {
@@ -111,5 +116,32 @@ public class Player {
     public void setPlayerHP(int playerHP){
         this.playerHP = playerHP;
     }
+    public void attack(Enemy enemy){
+enemy.attack(this);
+if (!enemy.enemyDied()){
+    enemy.attack(this);
 }
+    }
+    public Adventure.message attackStatus (){
+if ((weaponEquipped) == null){
+    return Adventure.message.NOT_FOUND;
+} else if (!currentRoom.getEnemies().isEmpty()) {
+playerDamage = weaponEquipped.getWeaponDamage();
+for (Enemy enemy : currentRoom.getEnemies()){
+    attack(enemy);
+    return Adventure.message.FOUND;
+}
+
+    
+}
+else{
+    return Adventure.message.CANT;
+}return null;
+}
+public boolean playerDead(){
+if (playerHP < 1){
+    return true;
+}else{ return false;
+}
+}}
 

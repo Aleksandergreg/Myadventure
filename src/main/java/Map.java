@@ -20,7 +20,7 @@ public class Map {
         room2.setWest(room1);
         room2.setEast(room3);
         room2.createItem("A canadian waffle", "Would be nice with some syrup to put on top though");
-        room1.createEnemy("Aleksander", "Stærk", 50, 30, new MeleeWeapon("hammer", "stærk", 30));   
+       room1.createEnemy("Aleks", "Very strong", 50, 2, new MeleeWeapon("Sword", "Strong", 17));
         room3.setWest(room2);
         room3.setSouth(room6);
         room3.createItem("Big snake", "A green can with the name 'Carlsberg' on it");

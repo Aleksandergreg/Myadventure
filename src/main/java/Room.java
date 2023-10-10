@@ -17,6 +17,10 @@ public class Room {
         this.description = description;
     }
 
+    public ArrayList<Enemy> getEnemies() {
+        return enemies;
+    }
+
     public String getName() {
         return name;
     }
@@ -96,5 +100,8 @@ public class Room {
             }
         }
         return null;
+    }
+    public void removeEnemy(Enemy enemy){
+        enemies.remove(enemy);
     }
 }
