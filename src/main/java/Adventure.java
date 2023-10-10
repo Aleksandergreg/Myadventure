@@ -1,7 +1,7 @@
 public class Adventure {
     private Map map = new Map();
     private Player player;
-
+    private Enemy enemy;
     public Adventure() {
         map.createRooms();
         player = new Player();
@@ -43,5 +43,8 @@ public class Adventure {
     }
     public Adventure.message equipWeapon(String itemName){
         return player.weaponEquip(itemName);
+    }
+    public Adventure.message attackEnemy (String enemy){
+        return message.NOT_FOUND;
     }
 }

@@ -25,8 +25,7 @@ public class Enemy {
         return enemyDescription;
     }
     public int damageDealt (Player player){
-        int damageDealt = enemyHp - player.getWeaponEquipped().getWeaponDamage();
-        return damageDealt;
+        return enemyHp - player.getWeaponEquipped().getWeaponDamage();
     }
     public void attack(Player player){
         player.setPlayerHP(player.getPlayerHp() - enemyWeapEquip.getWeaponDamage());
@@ -44,10 +43,5 @@ public class Enemy {
 
     @Override
     public String toString() {
-        return "Enemy{" +
-                "enemyHp=" + enemyHp +
-                ", enemyName='" + enemyName + '\'' +
-                ", enemyWeapEquip=" + enemyWeapEquip +
-                ", enemyDescription='" + enemyDescription + '\'' +
-                '}';
+        return enemyName;
     }}
